@@ -6,9 +6,6 @@ import akka.stream.ActorMaterializer
 import com.rest.akka.api.configuration.AppSettings
 import com.rest.akka.api.routes.MainRouter
 
-/**
- * Created by matija on 11/22/2015.
- */
 object Boot extends App with AppSettings {
 
   protected implicit val system = ActorSystem(AppName)

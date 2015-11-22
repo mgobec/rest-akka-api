@@ -11,9 +11,6 @@ import org.json4s.jackson.Serialization
 
 import com.fasterxml.jackson.databind.{ DeserializationFeature, SerializationFeature }
 
-/**
-  * Created by matija on 11/22/2015.
-  */
 trait JsonSerialization {
 
   val jsonMediaType = MediaTypes.`application/json`
