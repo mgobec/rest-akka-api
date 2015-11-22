@@ -20,11 +20,11 @@ class MainRouter(private implicit val materializer: ActorMaterializer) extends J
 
   private def routes(): Route =
     path("test") { get { complete(WelcomeMessage("Test message")) } } ~
-    path("welcome") {
-      get { complete { AkkaHttpController.welcome() } } ~
-      (post & entity(as[WelcomeMessage])) { messageRequest => complete(AkkaHttpController.welcome(Some(messageRequest.message))) }
-    } ~
-    path("status") { get { complete(Status("OK", DateTime.now().toString("HH:mm dd MMM yyyy"))) } }
+      path("welcome") {
+        get { complete { AkkaHttpController.welcome() } } ~
+          (post & entity(as[WelcomeMessage])) { messageRequest => complete(AkkaHttpController.welcome(Some(messageRequest.message))) }
+      } ~
+      path("status") { get { complete(Status("OK", DateTime.now().toString("HH:mm dd MMM yyyy"))) } }
 }
 
 case class Status(status: String, time: String)

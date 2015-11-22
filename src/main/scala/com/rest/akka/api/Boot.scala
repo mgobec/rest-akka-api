@@ -22,7 +22,8 @@ object Boot extends App with AppSettings {
 
   Console.println(s"Server online at ${httpInterface}:${httpPort}")
   Console.println(s"Press RETURN to stop...")
-  Console.readLine()
+  scala.io.StdIn.readLine()
+
   bindingFuture
     .flatMap(_.unbind()) // trigger unbinding from the port
     .onComplete(_ ⇒ system.shutdown()) // and shutdown when done
