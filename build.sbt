@@ -16,7 +16,7 @@ unmanagedSourceDirectories.in(Compile) := List(scalaSource.in(Compile).value)
 unmanagedSourceDirectories.in(Test)    := List(scalaSource.in(Test).value)
 
 libraryDependencies ++= {
-  val AkkaStreams     = "2.0-M1"
+  val AkkaStreams     = "2.0-M2"
   val JacksonVersion  = "3.3.0"
 
   Seq(
